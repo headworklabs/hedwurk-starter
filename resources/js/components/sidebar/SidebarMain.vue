@@ -1,6 +1,6 @@
 <script setup>
     import { Link, usePage } from '@inertiajs/vue3'
-    import { LayoutGrid, List, WholeWord } from 'lucide-vue-next'
+    import { LayoutGrid, Squircle } from 'lucide-vue-next'
     import {
         SidebarContent,
         SidebarGroup,
@@ -15,19 +15,19 @@
 
     const navItems = [
         {
-            title: 'Quickstart',
-            url: '/quickstart',
+            title: 'Dashboard',
+            url: '/dashboard',
             icon: LayoutGrid,
         },
         {
-            title: 'Substance Lists',
-            url: '/dsls',
-            icon: List,
+            title: 'Page 1',
+            url: '/page-1',
+            icon: Squircle,
         },
         {
-            title: 'String Encoder',
-            url: '/encoder',
-            icon: WholeWord,
+            title: 'Page 2',
+            url: '/page-2',
+            icon: Squircle,
         },
     ]
 </script>
@@ -35,7 +35,7 @@
 <template>
     <SidebarContent>
         <SidebarGroup>
-            <SidebarGroupLabel>Tools</SidebarGroupLabel>
+            <SidebarGroupLabel>Platform</SidebarGroupLabel>
             <SidebarGroupContent>
                 <SidebarMenu>
                     <SidebarMenuItem

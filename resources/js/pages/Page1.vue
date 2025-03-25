@@ -5,8 +5,8 @@
 
     const breadcrumbs = [
         {
-            title: 'Dashboard',
-            href: '/dashboard',
+            title: 'Page 1',
+            href: '/page-1',
         },
     ]
 </script>
@@ -14,7 +14,7 @@
 <template>
     <AppLayout :breadcrumbs>
         <PageContainer>
-            <PageTitle title="Dashboard" />
+            <PageTitle title="Page 1" />
             <p class="mt-4 pr-24 text-sm">Build something...</p>
         </PageContainer>
     </AppLayout>

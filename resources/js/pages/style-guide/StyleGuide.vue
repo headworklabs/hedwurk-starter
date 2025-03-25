@@ -18,6 +18,14 @@
             <PageTitle title="Style Guide" />
             <div class="mt-6 flex flex-col gap-12">
                 <div>
+                    <h2 class="text-xl font-medium">Colours</h2>
+                    <a
+                        href="https://ui.shadcn.com/colors"
+                        target="_blank">
+                        ShadCn Colour Reference
+                    </a>
+                </div>
+                <div>
                     <h2 class="text-xl font-medium">Buttons</h2>
                     <div class="flex gap-4">
                         <Button variant="default">Button</Button>

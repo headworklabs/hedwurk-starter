@@ -1,10 +1,8 @@
-<script setup lang="ts">
+<script setup>
     import { useForm } from '@inertiajs/vue3'
     import { ref } from 'vue'
-
-    // Components
-    import HeadingSmall from '@/components/HeadingSmall.vue'
-    import InputError from '@/components/InputError.vue'
+    import InputError from '@/components/forms/InputError.vue'
+    import PageTitle from '@/layouts/partials/PageTitle.vue'
     import { Button } from '@/components/ui/button'
     import {
         Dialog,
@@ -19,13 +17,13 @@
     import { Input } from '@/components/ui/input'
     import { Label } from '@/components/ui/label'
 
-    const passwordInput = ref<HTMLInputElement | null>(null)
+    const passwordInput = ref(null)
 
     const form = useForm({
         password: '',
     })
 
-    const deleteUser = (e: Event) => {
+    const deleteUser = (e) => {
         e.preventDefault()
 
         form.delete(route('profile.destroy'), {
@@ -44,7 +42,7 @@
 
 <template>
     <div class="space-y-6">
-        <HeadingSmall
+        <PageTitle
             title="Delete account"
             description="Delete your account and all of its resources" />
         <div class="space-y-4 rounded-lg border border-red-100 bg-red-50 p-4 dark:border-red-200/10 dark:bg-red-700/10">

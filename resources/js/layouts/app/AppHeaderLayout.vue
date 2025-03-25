@@ -1,7 +1,5 @@
 <script setup>
-    import AppShell from '@/components/AppShell.vue'
     import AppHeader from '@/components/AppHeader.vue'
-    import AppContent from '@/components/AppContent.vue'
 
     defineProps({
         breadcrumbs: {
@@ -12,10 +10,10 @@
 </script>
 
 <template>
-    <AppShell class="flex-col">
-        <AppHeader :breadcrumbs="breadcrumbs" />
-        <AppContent>
+    <div class="flex min-h-screen w-full flex-col">
+        <AppHeader :breadcrumbs />
+        <div class="mx-auto flex h-full w-full max-w-7xl flex-1 flex-col gap-4 rounded-xl">
             <slot />
-        </AppContent>
-    </AppShell>
+        </div>
+    </div>
 </template>

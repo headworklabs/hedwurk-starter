@@ -1,25 +1,23 @@
-<script setup lang="ts">
-    import InputError from '@/components/InputError.vue'
+<script setup>
+    import { ref } from 'vue'
+    import { useForm } from '@inertiajs/vue3'
     import AppLayout from '@/layouts/AppLayout.vue'
     import SettingsLayout from '@/layouts/settings/Layout.vue'
-    import { Head, useForm } from '@inertiajs/vue3'
-    import { ref } from 'vue'
-
-    import HeadingSmall from '@/components/HeadingSmall.vue'
+    import PageTitle from '@/layouts/partials/PageTitle.vue'
     import { Button } from '@/components/ui/button'
     import { Input } from '@/components/ui/input'
     import { Label } from '@/components/ui/label'
-    import { type BreadcrumbItem } from '@/types'
+    import InputError from '@/components/forms/InputError.vue'
 
-    const breadcrumbItems: BreadcrumbItem[] = [
+    const breadcrumbItems = [
         {
             title: 'Password settings',
             href: '/settings/password',
         },
     ]
 
-    const passwordInput = ref<HTMLInputElement | null>(null)
-    const currentPasswordInput = ref<HTMLInputElement | null>(null)
+    const passwordInput = ref(null)
+    const currentPasswordInput = ref(null)
 
     const form = useForm({
         current_password: '',
@@ -31,7 +29,7 @@
         form.put(route('password.update'), {
             preserveScroll: true,
             onSuccess: () => form.reset(),
-            onError: (errors: any) => {
+            onError: (errors) => {
                 if (errors.password) {
                     form.reset('password', 'password_confirmation')
                     if (passwordInput.value instanceof HTMLInputElement) {
@@ -52,14 +50,11 @@
 
 <template>
     <AppLayout :breadcrumbs="breadcrumbItems">
-        <Head title="Password settings" />
-
         <SettingsLayout>
             <div class="space-y-6">
-                <HeadingSmall
+                <PageTitle
                     title="Update password"
                     description="Ensure your account is using a long, random password to stay secure" />
-
                 <form
                     @submit.prevent="updatePassword"
                     class="space-y-6">
@@ -75,7 +70,6 @@
                             placeholder="Current password" />
                         <InputError :message="form.errors.current_password" />
                     </div>
-
                     <div class="grid gap-2">
                         <Label for="password">New password</Label>
                         <Input
@@ -88,7 +82,6 @@
                             placeholder="New password" />
                         <InputError :message="form.errors.password" />
                     </div>
-
                     <div class="grid gap-2">
                         <Label for="password_confirmation">Confirm password</Label>
                         <Input
@@ -100,10 +93,8 @@
                             placeholder="Confirm password" />
                         <InputError :message="form.errors.password_confirmation" />
                     </div>
-
                     <div class="flex items-center gap-4">
                         <Button :disabled="form.processing">Save password</Button>
-
                         <Transition
                             enter-active-class="transition ease-in-out"
                             enter-from-class="opacity-0"

@@ -7,7 +7,6 @@
 -->
 
 <script setup>
-    import { useColorMode } from '@vueuse/core'
     import AppLayout from './app/AppSidebarLayout.vue'
 
     defineProps({
@@ -16,8 +15,6 @@
             default: () => [],
         },
     })
-
-    const mode = useColorMode()
 </script>
 
 <template>

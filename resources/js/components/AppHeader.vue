@@ -6,7 +6,7 @@
     import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
     import AppLogo from '@/components/AppLogo.vue'
     import AppLogoIcon from '@/components/AppLogoIcon.vue'
-    import Breadcrumbs from '@/components/Breadcrumbs.vue'
+    import Breadcrumbs from '@/components/sidebar/Breadcrumbs.vue'
     import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
     import {
         NavigationMenu,
@@ -57,7 +57,7 @@
 
 <template>
     <div>
-        <div class="border-sidebar-border/80 border-b">
+        <div class="border-b border-sidebar-border/80">
             <div class="mx-auto flex h-16 items-center px-4 md:max-w-7xl">
                 <!-- Mobile Menu -->
                 <div class="lg:hidden">
@@ -214,7 +214,7 @@
 
         <div
             v-if="props.breadcrumbs.length > 1"
-            class="border-sidebar-border/70 flex w-full border-b">
+            class="flex w-full border-b border-sidebar-border/70">
             <div class="mx-auto flex h-12 w-full items-center justify-start px-4 text-gray-500 md:max-w-7xl">
                 <Breadcrumbs :breadcrumbs="breadcrumbs" />
             </div>

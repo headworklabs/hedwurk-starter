@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
     import { Link } from '@inertiajs/vue3'
     import { DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from '@/components/ui/dropdown-menu'
     import { LogOut, Settings } from 'lucide-vue-next'

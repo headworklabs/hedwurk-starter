@@ -1,3 +1,9 @@
+<!--
+    @NOTE: This is the customisable sidebar component.
+    Modify Sidebar variant="{type}" as 'sidebar' || 'floating' || 'inset'
+    CHeck ShadCn for more info: https://www.shadcn-vue.com/docs/components/sidebar.html
+-->
+
 <script setup>
     import SidebarHead from './SidebarHead.vue'
     import SidebarMain from './SidebarMain.vue'
@@ -7,7 +13,7 @@
 
 <template>
     <Sidebar
-        variant="inset"
+        variant="floating"
         collapsible="icon">
         <SidebarHead />
         <SidebarMain />

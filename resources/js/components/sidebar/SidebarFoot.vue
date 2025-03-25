@@ -1,8 +1,8 @@
 <script setup>
     import { Link, usePage } from '@inertiajs/vue3'
-    import { User2, ChevronsUpDown } from 'lucide-vue-next'
-    import { SidebarFooter, SidebarMenu, SidebarMenuItem, SidebarMenuButton } from '@/components/ui/sidebar'
-    import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
+    import { User2, ChevronsUpDown, SwatchBook } from 'lucide-vue-next'
+    import { SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton } from '@/components/ui/sidebar'
+    import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
     import UserMenuInfo from '@/components/sidebar/UserMenuInfo.vue'
     import UserMenuContent from '@/components/sidebar/UserMenuContent.vue'
 
@@ -12,6 +12,24 @@
 
 <template>
     <SidebarFooter>
+        <SidebarGroup class="group-data-[collapsible=icon]:p-0">
+            <SidebarGroupContent>
+                <SidebarMenu>
+                    <SidebarMenuItem>
+                        <SidebarMenuButton
+                            class="text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100"
+                            as-child>
+                            <Link
+                                :href="route('style-guide')"
+                                class="rounded-lg px-3 py-0.5 transition hover:bg-gray-700">
+                                <SwatchBook />
+                                <span>Style Guide</span>
+                            </Link>
+                        </SidebarMenuButton>
+                    </SidebarMenuItem>
+                </SidebarMenu>
+            </SidebarGroupContent>
+        </SidebarGroup>
         <SidebarMenu>
             <SidebarMenuItem>
                 <DropdownMenu v-if="user">

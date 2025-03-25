@@ -1,8 +1,8 @@
 <script setup>
-    import AppContent from '@/components/AppContent.vue'
-    import AppShell from '@/components/AppShell.vue'
-    import AppSidebar from '@/components/AppSidebar.vue'
-    import AppSidebarHeader from '@/components/AppSidebarHeader.vue'
+    import { usePage } from '@inertiajs/vue3'
+    import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar'
+    import AppSidebar from '@/components/sidebar/AppSidebar.vue'
+    import AppHeaderNav from '@/components/sidebar/AppHeaderNav.vue'
 
     defineProps({
         breadcrumbs: {
@@ -10,14 +10,18 @@
             default: () => [],
         },
     })
+
+    const isOpen = usePage().props.sidebarOpen
 </script>
 
 <template>
-    <AppShell variant="sidebar">
+    <SidebarProvider :default-open="isOpen">
         <AppSidebar />
-        <AppContent variant="sidebar">
-            <AppSidebarHeader :breadcrumbs />
-            <slot />
-        </AppContent>
-    </AppShell>
+        <SidebarInset>
+            <AppHeaderNav :breadcrumbs />
+            <div>
+                <slot />
+            </div>
+        </SidebarInset>
+    </SidebarProvider>
 </template>
