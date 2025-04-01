@@ -1,5 +1,7 @@
 import { onMounted, ref } from 'vue'
 
+const appearance = ref('system')
+
 export function updateTheme(value) {
     if (value === 'system') {
         const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
@@ -26,8 +28,6 @@ export function initializeTheme() {
 }
 
 export function useAppearance() {
-    const appearance = ref('system')
-
     onMounted(() => {
         initializeTheme()
 

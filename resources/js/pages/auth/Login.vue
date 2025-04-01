@@ -90,7 +90,7 @@
                 </div>
                 <Button
                     type="submit"
-                    class="mt-4 w-full"
+                    class="mt-4 h-9 w-full"
                     :tabindex="4"
                     :disabled="form.processing">
                     <LoaderCircle

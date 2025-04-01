@@ -1,99 +1,95 @@
 <script setup>
     import AppLayout from '@/layouts/AppLayout.vue'
     import PageContainer from '@/layouts/partials/PageContainer.vue'
-    import { Button } from '@/components/ui/button'
-    import { Input } from '@/components/ui/input'
-    import { Label } from '@/components/ui/label'
-    import { FloatLabel } from '@/components/ui/float-label'
-    import { Checkbox } from '@/components/ui/checkbox'
-    import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
-    import { Switch } from '@/components/ui/switch'
-    import { Form } from '@/components/ui/form'
-    import { ArrowRight } from 'lucide-vue-next'
+    import PageTitle from '@/layouts/partials/PageTitle.vue'
+    import Libraries from './partials/Libraries.vue'
+    import Colours from './partials/Colours.vue'
+    import Buttons from './partials/Buttons.vue'
+    import Switches from './partials/Switches.vue'
+    import Choices from './partials/Choices.vue'
+    import Inputs from './partials/Inputs.vue'
+    import Selects from './partials/Selects.vue'
+    import Modals from './partials/Modals.vue'
+    import Drawers from './partials/Drawers.vue'
+
+    const navItems = [
+        { name: 'Style Guide', href: '#style-guide' },
+        { name: 'Libraries', href: '#libraries' },
+        { name: 'Colours', href: '#colours' },
+        { name: 'Buttons', href: '#buttons' },
+        { name: 'Switches', href: '#switches' },
+        { name: 'Checkboxes', href: '#checkboxes' },
+        { name: 'Radios', href: '#radios' },
+        { name: 'Inputs', href: '#inputs' },
+        { name: 'Selects', href: '#selects' },
+        { name: 'Modals', href: '#modals' },
+        { name: 'Drawers', href: '#drawers' },
+        { name: 'Modals', href: '#modals' },
+        { name: 'Drop Downs', href: '#drop-downs' },
+        // { name: 'Tooltips', href: '#tooltips' },
+        // { name: 'Popovers', href: '#popovers' },
+        // { name: 'Toasts', href: '#toasts' },
+        // { name: 'Notifications', href: '#notifications' },
+        // { name: 'Pagination', href: '#pagination' },
+        // { name: 'Tables', href: '#tables' },
+        // { name: 'Cards', href: '#cards' },
+        // { name: 'Avatars', href: '#avatars' },
+        // { name: 'Badges', href: '#badges' },
+        // { name: 'Progress Bars', href: '#progress-bars' },
+        // { name: 'Spinners', href: '#spinners' },
+        // { name: 'Icons', href: '#icons' },
+        // { name: 'Typography', href: '#typography' },
+        // { name: 'Grid', href: '#grid' },
+        // { name: 'Forms', href: '#forms' },
+        // { name: 'Alerts', href: '#alerts' },
+        // { name: 'Tooltips', href: '#tooltips' },
+        // { name: 'Popovers', href: '#popovers' },
+        // { name: 'Toasts', href: '#toasts' },
+        // { name: 'Notifications', href: '#notifications' },
+        // { name: 'Pagination', href: '#pagination' },
+        // { name: 'Tables', href: '#tables' },
+        // { name: 'Cards', href: '#cards' },
+        // { name: 'Avatars', href: '#avatars' },
+        // { name: 'Badges', href: '#badges' },
+        // { name: 'Progress Bars', href: '#progress-bars' },
+        // { name: 'Spinners', href: '#spinners' },
+        // { name: 'Icons', href: '#icons' },
+    ]
 </script>
 
 <template>
     <AppLayout>
-        <PageContainer>
+        <PageContainer
+            class="px-12"
+            y="lg">
             <PageTitle title="Style Guide" />
-            <div class="mt-6 flex flex-col gap-12">
-                <div>
-                    <h2 class="text-xl font-medium">Colours</h2>
-                    <a
-                        href="https://ui.shadcn.com/colors"
-                        target="_blank">
-                        ShadCn Colour Reference
-                    </a>
+            <div class="flex space-x-12">
+                <div class="mt-6 space-y-12">
+                    <Libraries />
+                    <Colours />
+                    <Buttons />
+                    <Switches />
+                    <Choices />
+                    <Inputs />
+                    <Selects />
+                    <Modals />
+                    <Drawers />
+                    <!-- <DropDowns /> -->
                 </div>
-                <div>
-                    <h2 class="text-xl font-medium">Buttons</h2>
-                    <div class="flex gap-4">
-                        <Button variant="default">Button</Button>
-                        <Button variant="secondary"> Secondary </Button>
-                        <Button variant="destructive"> Destructive </Button>
-                        <Button variant="outline"> Outline </Button>
-                        <Button variant="ghost"> Ghost </Button>
-                        <Button variant="link"> Link </Button>
-                        <Button
-                            variant="outline"
-                            class="px-2">
-                            <ArrowRight class="size-4" />
-                        </Button>
-                        <Button disabled>Disabled</Button>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-xl font-medium">Switches</h2>
-                    <div class="mt-4 flex flex-col space-y-2">
-                        <div class="flex items-center space-x-2">
-                            <Switch id="airplane-mode" />
-                            <Label for="airplane-mode">Airplane Mode</Label>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <Switch id="hairplane-mode" />
-                            <Label for="hairplane-mode">Hairplane Mode</Label>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <Switch
-                                id="scareplane-mode"
-                                disabled />
-                            <Label for="scareplane-mode">Scareplane Mode</Label>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-xl font-medium">Checkboxes</h2>
-                    <div class="mt-4 flex items-center space-x-2">
-                        <Checkbox id="checkbox" />
-                        <Label for="checkbox">Check me</Label>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-xl font-medium">Buttons</h2>
-                    <RadioGroup class="mt-4">
-                        <div class="flex items-center space-x-2">
-                            <RadioGroupItem
-                                value="option1"
-                                id="option1" />
-                            <Label for="option1">Default</Label>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <RadioGroupItem
-                                value="option2"
-                                id="option2" />
-                            <Label for="option2">Not Default</Label>
-                        </div>
-                    </RadioGroup>
-                </div>
-                <div>
-                    <h2 class="text-xl font-medium">Inputs</h2>
-                    <div class="mt-4">
-                        <Label for="input1">Input</Label>
-                        <Input id="input1" />
-                    </div>
-                    <div class="relative mt-6">
-                        <Input id="input2" />
-                        <FloatLabel for="input2"> Float Input </FloatLabel>
+                <div class="hidden w-44 flex-shrink-0 lg:block 2xl:w-52">
+                    <div class="fixed top-0 pt-32 text-sm">
+                        <h4 class="font-medium">On this page</h4>
+                        <ul class="mt-4 space-y-2">
+                            <li
+                                v-for="item in navItems"
+                                :key="item.name">
+                                <a
+                                    :href="item.href"
+                                    class="text-gray-500 transition hover:text-gray-800 dark:hover:text-gray-50">
+                                    {{ item.name }}
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

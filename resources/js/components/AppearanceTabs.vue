@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
     import { useAppearance } from '@/composables/useAppearance'
     import { Monitor, Moon, Sun } from 'lucide-vue-next'
 

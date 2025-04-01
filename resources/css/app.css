@@ -4,8 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* https://ui.shadcn.com/colors */
-/* https://redpixelthemes.com/blog/tailwindcss-colors-different-formats/ */
 @layer base {
     :root {
         --radius: 0.5rem;

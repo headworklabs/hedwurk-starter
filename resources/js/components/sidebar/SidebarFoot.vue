@@ -6,13 +6,15 @@
     import UserMenuInfo from '@/components/sidebar/UserMenuInfo.vue'
     import UserMenuContent from '@/components/sidebar/UserMenuContent.vue'
 
-    const page = usePage()
-    const user = page.props.auth.user
+    const user = usePage().props.auth.user
+    const appEnv = usePage().props.env.app
 </script>
 
 <template>
     <SidebarFooter>
-        <SidebarGroup class="group-data-[collapsible=icon]:p-0">
+        <SidebarGroup
+            v-if="appEnv !== 'production'"
+            class="group-data-[collapsible=icon]:p-0">
             <SidebarGroupContent>
                 <SidebarMenu>
                     <SidebarMenuItem>

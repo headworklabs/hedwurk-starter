@@ -14,8 +14,9 @@
                 default: '',
                 xs: 'lg:max-w-xl',
                 sm: 'lg:max-w-2xl',
+                md: 'lg:max-w-3xl',
                 lg: 'lg:max-w-5xl',
-                lg: 'lg:max-w-7xl',
+                xl: 'lg:max-w-7xl',
             },
             y: {
                 default: 'py-6',

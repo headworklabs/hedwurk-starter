@@ -1,16 +1,16 @@
 <script setup>
-    import { useColorMode } from '@vueuse/core'
-    import { SunIcon, MoonIcon, ComputerDesktopIcon } from '@heroicons/vue/24/outline'
+    import { useAppearance } from '@/composables/useAppearance'
+    import { Monitor, Moon, Sun } from 'lucide-vue-next'
 
-    const mode = useColorMode()
+    const { appearance, updateAppearance } = useAppearance()
 
     function toggleAppearance() {
-        if (mode.value === 'light') {
-            mode.value = 'dark'
-        } else if (mode.value === 'dark') {
-            mode.value = 'auto'
+        if (appearance.value === 'light') {
+            updateAppearance('dark')
+        } else if (appearance.value === 'dark') {
+            updateAppearance('system')
         } else {
-            mode.value = 'light'
+            updateAppearance('light')
         }
     }
 </script>
@@ -18,15 +18,15 @@
 <template>
     <button
         @click="toggleAppearance"
-        class="flex items-center">
-        <SunIcon
-            v-if="mode === 'light'"
-            class="h-4 w-4 text-gray-600 dark:text-gray-200" />
-        <MoonIcon
-            v-if="mode === 'dark'"
-            class="h-4 w-4 text-gray-600 dark:text-gray-200" />
-        <ComputerDesktopIcon
-            v-if="mode === 'auto'"
-            class="h-4 w-4 text-gray-600 dark:text-gray-200" />
+        class="flex items-center rounded-full p-1.5 text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">
+        <Sun
+            v-if="appearance === 'light'"
+            class="size-4" />
+        <Moon
+            v-if="appearance === 'dark'"
+            class="size-4" />
+        <Monitor
+            v-if="appearance === 'system'"
+            class="size-4" />
     </button>
 </template>

@@ -1,6 +1,6 @@
 <script setup>
-    import { useForm } from '@inertiajs/vue3'
     import { ref } from 'vue'
+    import { useForm } from '@inertiajs/vue3'
     import InputError from '@/components/forms/InputError.vue'
     import PageTitle from '@/layouts/partials/PageTitle.vue'
     import { Button } from '@/components/ui/button'

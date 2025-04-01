@@ -26,7 +26,6 @@
             {{ getInitials(user.name) }}
         </AvatarFallback>
     </Avatar>
-
     <div class="grid flex-1 text-left text-sm leading-tight">
         <span class="truncate font-medium">{{ user.name }}</span>
         <span

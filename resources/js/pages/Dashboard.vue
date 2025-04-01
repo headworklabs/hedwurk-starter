@@ -13,7 +13,7 @@
 
 <template>
     <AppLayout :breadcrumbs>
-        <PageContainer>
+        <PageContainer y="xl">
             <PageTitle title="Dashboard" />
             <p class="mt-4 pr-24 text-sm">Build something...</p>
         </PageContainer>
