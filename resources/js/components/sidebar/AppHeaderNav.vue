@@ -1,12 +1,13 @@
 <script setup>
     import { computed } from 'vue'
     import { Link, usePage } from '@inertiajs/vue3'
+    import { useInitials } from '@/composables/useInitials'
+    import { User2 } from 'lucide-vue-next'
     import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
     import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
     import { SidebarTrigger } from '@/components/ui/sidebar'
     import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
     import UserMenuContent from '@/components/sidebar/UserMenuContent.vue'
-    import { useInitials } from '@/composables/useInitials'
     import NotificationsDrawer from '../notifications/NotificationsDrawer.vue'
     import AppearanceToggle from '../AppearanceToggle.vue'
 
@@ -53,7 +54,7 @@
         </div>
         <div class="flex items-center gap-3">
             <AppearanceToggle />
-            <NotificationsDrawer />
+            <NotificationsDrawer v-if="user" />
             <template v-if="user">
                 <DropdownMenu>
                     <DropdownMenuTrigger as-child>
@@ -80,6 +81,12 @@
                     </DropdownMenuContent>
                 </DropdownMenu>
             </template>
+            <Link
+                v-else
+                :href="route('login')"
+                class="flex items-center rounded-full p-1.5 text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">
+                <User2 class="size-5" />
+            </Link>
         </div>
     </div>
 </template>

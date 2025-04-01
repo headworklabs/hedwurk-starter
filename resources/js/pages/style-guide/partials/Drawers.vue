@@ -11,7 +11,7 @@
             class="pt-12 text-xl font-medium text-gray-500">
             Drawers
         </h2>
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <div>
             <Button
                 variant="default"
                 as-child>

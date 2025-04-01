@@ -14,7 +14,7 @@
     <SidebarFooter>
         <SidebarGroup
             v-if="appEnv !== 'production'"
-            class="group-data-[collapsible=icon]:p-0">
+            class="p-0">
             <SidebarGroupContent>
                 <SidebarMenu>
                     <SidebarMenuItem>
@@ -58,7 +58,7 @@
                         :href="route('login')"
                         class="rounded-lg px-3 py-0.5 transition hover:bg-gray-700">
                         <User2 />
-                        <span>Admin Login</span>
+                        <span>Account Login</span>
                     </Link>
                 </SidebarMenuButton>
             </SidebarMenuItem>

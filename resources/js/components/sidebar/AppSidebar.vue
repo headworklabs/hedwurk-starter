@@ -13,7 +13,7 @@
 
 <template>
     <Sidebar
-        variant="floating"
+        variant="sidebar"
         collapsible="icon">
         <SidebarHead />
         <SidebarMain />

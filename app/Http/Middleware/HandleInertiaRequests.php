@@ -54,7 +54,7 @@ class HandleInertiaRequests extends Middleware
             'env' => [
                 'app' => config('app.env'),
             ],
-            'notifications' => $request->user()?->notifications,
+            'notifications' => $request->user()?->Notifications,
         ];
     }
 }

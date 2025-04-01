@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Testing;
+namespace App\Http\Controllers\Other;
 
+use Inertia\Inertia;
 use App\Http\Controllers\Controller;
 use App\Notifications\WelcomeNotification;
 use Illuminate\Notifications\DatabaseNotification;
