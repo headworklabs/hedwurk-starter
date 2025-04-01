@@ -7,7 +7,7 @@
     import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
     import UserMenuContent from '@/components/sidebar/UserMenuContent.vue'
     import { useInitials } from '@/composables/useInitials'
-    import NotificationsDrawer from './NotificationsDrawer.vue'
+    import NotificationsDrawer from '../notifications/NotificationsDrawer.vue'
     import AppearanceToggle from '../AppearanceToggle.vue'
 
     const { getInitials } = useInitials()

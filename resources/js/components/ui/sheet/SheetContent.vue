@@ -23,6 +23,7 @@ const props = defineProps({
   disableOutsidePointerEvents: { type: Boolean, required: false },
   asChild: { type: Boolean, required: false },
   as: { type: null, required: false },
+  showClose: { type: Boolean, default: true },
 });
 
 const emits = defineEmits([
@@ -55,9 +56,10 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
       <slot />
 
       <DialogClose
-        class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-gray-950 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-gray-100 dark:ring-offset-gray-950 dark:focus:ring-gray-300 dark:data-[state=open]:bg-gray-800"
+        v-if="props.showClose"
+        class="absolute right-4 top-3 p-1 rounded-full focus:outline-none data-[state=open]:bg-gray-100 dark:data-[state=open]:bg-gray-800 text-gray-500/80 hover:text-gray-800 hover:bg-gray-100 dark:hover:text-gray-50 dark:hover:bg-gray-700"
       >
-        <X class="w-4 h-4" />
+        <X class="size-5" />
       </DialogClose>
     </DialogContent>
   </DialogPortal>
